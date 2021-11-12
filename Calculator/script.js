@@ -97,32 +97,28 @@ function handleOperators(operator) {
     const times = calculator.displayValue.includes('*');
     const divide = calculator.displayValue.includes('/');
 
-    if (operator !== null && calculator.operatorOnOff) {
-        if (plus) {
+    if (operator !== null) {
+
+        if (plus && !calculator.operatorOnOff) {
             calculate();
-            calculator.displayValue += operator;
-            calculator.operatorSign = operator;
-        } else if (minus) {
+        } else if (minus && !calculator.operatorOnOff) {
             calculate();
-            calculator.displayValue += operator;
-            calculator.operatorSign = operator;
-        } else if (times) {
+        } else if (times && !calculator.operatorOnOff) {
             calculate();
-            calculator.displayValue += operator;
-            calculator.operatorSign = operator;
-        } else if (divide) {
+        } else if (divide && !calculator.operatorOnOff) {
             calculate();
-            calculator.displayValue += operator;
-            calculator.operatorSign = operator;
-        } else {
-            calculator.displayValue += operator;
-            calculator.operatorSign = operator;
         }
 
-        calculator.equals = false;
-        calculator.displayOnOff = true;
-        calculator.firstOpOnOff = false;
-        calculator.secondOpOnOff = true;
+        if (calculator.operatorOnOff) {
+            calculator.displayValue += operator;
+            calculator.operatorSign = operator;
+
+            calculator.operatorOnOff = false;
+            calculator.equals = false;
+            calculator.displayOnOff = true;
+            calculator.firstOpOnOff = false;
+            calculator.secondOpOnOff = true;
+        }
     }
 }
 
@@ -153,8 +149,9 @@ function calculate() {
         calculator.secondOperand = '';
 
         calculator.secondOpOnOff = false;
-        calculator.displayOnOff = false;
         calculator.equals = true;
+        calculator.displayOnOff = false;
+        calculator.operatorOnOff = true;
     }
 }
 
@@ -193,16 +190,15 @@ function deleteOneUnit() {
             calculator.firstOperand = calculator.firstOperand.slice(0, -1);
         }
 
-        if (calculator.operatorOnOff && calculator.operatorSign !== '' && calculator.secondOperand === '') {
+        if (!calculator.operatorOnOff && calculator.operatorSign !== '' && calculator.secondOperand === '') {
             calculator.operatorSign = calculator.operatorSign.slice(0, -1);
+            calculator.operatorOnOff = true;
             calculator.firstOpOnOff = true;
             calculator.secondOpOnOff = false;
         }
 
         if (calculator.secondOpOnOff && calculator.secondOperand !== '') {
             calculator.secondOperand = calculator.secondOperand.slice(0, -1);
-            calculator.operatorOnOff = true;
-            calculator.secondOpOnOff = true;
         }
     }
 }
