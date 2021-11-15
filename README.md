@@ -1,2 +1,2 @@
-# Calculus
+# JSProject
 Calculator project
