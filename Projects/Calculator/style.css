@@ -18,13 +18,22 @@ body {
     background-repeat: round;
 }
 
+.home-icon {
+    padding: 20px 0 0 20px;
+}
+
+svg {
+    width: 60px;
+    fill: #fff;
+}
+
 .calculator-grid {
     box-sizing: border-box;
     display: grid;
     grid-template-columns: 60%;
     grid-template-rows: auto auto;
     justify-content: center;
-    transform: translateY(10%);
+    transform: translateY(6%);
 }
 
 .output {

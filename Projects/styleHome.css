@@ -8,24 +8,18 @@
 
 .grid-container {
     display: block;
-    /*display: grid;*/
-    /*grid-template-columns: 20% 60% 20%;*/
-    /*grid-template-rows: auto auto auto;*/
 }
 
 .header {
     background-image: url("./resource/by_daniel_hajdacki_on_unsplash.jpg");
     background-size: cover;
     background-repeat: no-repeat;
-    /*height: 200px;*/
 
     color: rgb(245, 229, 6);
     font-size: 2.4rem;
     text-align: center;
     padding: 35px 0 30px;
 }
-
-.body {}
 
 .wrapper {
     display: flex;
@@ -60,11 +54,7 @@ a {
     background-color: rgba(3, 134, 58, 0.2);
 }
 
-.left-sidebar {
-    display: none;
-}
-
-.rigt-sidebar {
+.left-sidebar, .rigt-sidebar {
     display: none;
 }
 
@@ -83,7 +73,7 @@ a {
     background: transparent;
 }
 
-/* Media Query */
+/************* Media Query ***************/
 
 @media (min-width: 500px) {
     .header {
@@ -94,5 +84,91 @@ a {
 @media (min-width: 688px) {
     .header {
         font-size: 4rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .grid-container {
+        display: grid;
+        grid-template-columns: 20% 60% 20%;
+        grid-template-rows: auto auto auto;
+    }
+
+    .header {
+        grid-column: 1/4;
+        grid-row: 1/2;
+        font-size: 4.5rem;
+    }
+
+    .body {
+        grid-column: 2/3;
+        grid-row: 2/3;
+    }
+
+    .left-sidebar {
+        display: block;
+        grid-column: 1/2;
+        grid-row: 2/3;
+        background-image: url("./resource/by_filip_zrnzevic_on_unsplash.jpg");
+        background-size: cover;
+    }
+
+    .left-sidebar p:first-child, .rigt-sidebar p:first-child {
+        background: transparent;
+        padding: 30px 10px 20px;
+        font-size: 1.5rem;
+        text-align: center;
+    }
+
+    .left-sidebar p:nth-child(2), .rigt-sidebar p:nth-child(2) {
+        background: transparent;
+        padding: 0 10px;
+        text-align: right;
+    }
+
+    .rigt-sidebar {
+        display: block;
+        grid-column: 3/4;
+        grid-row: 2/3;
+        background-image: url("./resource/by_ezhil_kumaran_on_unsplash.jpg");
+        background-size: cover;
+    }
+
+    .wrapper div {
+        width: 170px;
+        height: 120px;
+    }
+
+    .link-project {
+        font-size: 1.5rem;
+    }
+
+    .footer {
+        grid-column: 1/4;
+        grid-row: 3/4;
+    }
+}
+
+@media (min-width: 1024px) {
+    .header {
+        font-size: 5rem;
+        font-weight: 700;
+    }
+
+    .wrapper div {
+        width: 260px;
+        height: 160px;
+    }
+
+    .link-project {
+        font-size: 2rem;
+    }
+
+    .left-sidebar p:first-child, .rigt-sidebar p:first-child {
+        font-size: 2rem;
+    }
+
+    .left-sidebar p:nth-child(2), .rigt-sidebar p:nth-child(2) {
+        font-size: 1.5rem;
     }
 }
