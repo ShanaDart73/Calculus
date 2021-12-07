@@ -8,6 +8,7 @@
 
 html {
     background-image: url("./resource/by_ali_abdul_rahman_on_unsplash.jpg");
+    height: 100vh;
     background-size: cover;
     background-repeat: round;
 }
@@ -39,6 +40,7 @@ html {
 .playerMsg {
     display: flex;
     justify-content: center;
+    align-items: center;
     font-weight: 200;
 }
 
@@ -60,7 +62,7 @@ img {
 }
 
 #grid-section {
-    margin: 2em 0;
+    margin: 1em 0;
 }
 
 #grid {
@@ -74,10 +76,15 @@ li {
     border: 1px solid #fff;
     width: 100px;
     height: 100px;
-    display: block;
-    /*float: left;*/
-    font-size: 1em;
+    display: flex;
+    flex-direction: column;
+    color: transparent;
+    font-size: 18px;
     text-align: center;
+}
+
+li img {
+    margin: 0 auto;
 }
 
 #cell1, #cell2, #cell3 {
