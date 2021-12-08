@@ -105,6 +105,7 @@ li img {
 
 .resetBtn {
     text-align: center;
+
 }
 
 .resetBtn button {
@@ -114,4 +115,47 @@ li img {
     border: none;
     border-radius: 10px;
     background: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+}
+
+@media (min-width: 500px) {
+    .homeIcon svg {
+        width: 30px;
+    }
+
+    .title {
+        font-size: 30px;
+    }
+
+    .msgToPlayer {
+        font-size: 20px;
+    }
+}
+
+@media (min-width: 768px) {
+    .homeIcon svg {
+        width: 50px;
+    }
+
+    .title {
+        font-size: 50px;
+    }
+
+    .msgToPlayer {
+        font-size: 30px;
+    }
+
+    #grid {
+        width: 450px;
+    }
+
+    li {
+        width: 150px;
+        height: 150px;
+        font-size: 26px;
+    }
+
+    li img {
+        width: 100px;
+    }
 }
