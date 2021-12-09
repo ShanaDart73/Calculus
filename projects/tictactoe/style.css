@@ -105,7 +105,7 @@ li img {
 
 .resetBtn {
     text-align: center;
-
+    display: none;
 }
 
 .resetBtn button {
@@ -143,6 +143,10 @@ li img {
 
     .msgToPlayer {
         font-size: 30px;
+    }
+
+    img {
+        width: 90px;
     }
 
     #grid {

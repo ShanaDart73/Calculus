@@ -5,6 +5,9 @@
     const hideFieldset = document.getElementById('hiddenField');
     const seashell = document.querySelector('.seashell');
     const resetBtn = document.querySelector('.reset');
+    const hideRestartBtn = document.querySelector('.hiddenBtn');
+
+
 
     const image01 = new Image();
     image01.src = './resource/seashell01.png';
@@ -51,10 +54,13 @@
             this.appendChild(image02.cloneNode(true));
             cellIdTrack.push(this.id);
         }
+
+        if (!victory) playerMsg.textContent = 'Wait!'
+
         checkCellRow();
         gameDraw();
         switchMark();
-        computerMove();
+        setTimeout(computerMove, 1000);
     }
 
     function computerMove() {
@@ -441,6 +447,8 @@
             }
         }
 
+        if (!victory) playerMsg.textContent = 'Make your move';
+
         checkCellRow();
         gameDraw();
         switchMark();
@@ -464,6 +472,7 @@
         }
         cells = Array.from(grid.getElementsByTagName('li'));
         hideFieldset.style.display = 'none';
+        hideRestartBtn.style.display = 'block';
     }
 
     function gameDraw() {
@@ -519,5 +528,6 @@
         seashell.textContent = '';
         grid.innerHTML = '';
         hideFieldset.style.display = 'block';
+        hideRestartBtn.style.display = 'none';
     }
 })()
