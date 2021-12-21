@@ -12,17 +12,18 @@
     const image01 = new Image();
     image01.src = './resource/seashell01.png';
     image01.alt = 'seashell';
-    image01.width = '50';
+    //image01.width = '50';
 
     const image02 = new Image();
     image02.src = './resource/seashell02.png';
     image02.alt = 'seashell';
-    image02.width = '50';
+    //image02.width = '50';
 
     let mark = '';
     let cells = [];
     let cellIds = [];
     let cellIdTrack = [];
+    let cellPlayed = [];
     let victory = false;
 
     players.forEach(choice => {
@@ -69,23 +70,190 @@
                 cellIds.push(cell.id);
             }
         });
-        // Prevent the player to win easily
+
         if (mark === 'O' && victory === false) {
             breakme: {
+                // Make the computer win
+                // row strategy 01
+                if (cellIds.includes('cell3') && cellPlayed.includes('cell1') && cellPlayed.includes('cell2') && cells[2].textContent === '') {
+                    cells[2].textContent = mark;
+                    cells[2].appendChild(image02.cloneNode(true));
+                    cellPlayed.push(cells[2].id);
+                    break breakme;
+                }
+                if (cellIds.includes('cell2') && cellPlayed.includes('cell1') && cellPlayed.includes('cell3') && cells[1].textContent === '') {
+                    cells[1].textContent = mark;
+                    cells[1].appendChild(image02.cloneNode(true));
+                    cellPlayed.push(cells[1].id);
+                    break breakme;
+                }
+                if (cellIds.includes('cell1') && cellPlayed.includes('cell2') && cellPlayed.includes('cell3') && cells[0].textContent === '') {
+                    cells[0].textContent = mark;
+                    cells[0].appendChild(image02.cloneNode(true));
+                    cellPlayed.push(cells[0].id);
+                    break breakme;
+                }
+
+                // row strategy 02
+                if (cellIds.includes('cell6') && cellPlayed.includes('cell4') && cellPlayed.includes('cell5') && cells[5].textContent === '') {
+                    cells[5].textContent = mark;
+                    cells[5].appendChild(image02.cloneNode(true));
+                    cellPlayed.push(cells[5].id);
+                    break breakme;
+                }
+                if (cellIds.includes('cell5') && cellPlayed.includes('cell4') && cellPlayed.includes('cell6') && cells[4].textContent === '') {
+                    cells[4].textContent = mark;
+                    cells[4].appendChild(image02.cloneNode(true));
+                    cellPlayed.push(cells[4].id);
+                    break breakme;
+                }
+                if (cellIds.includes('cell4') && cellPlayed.includes('cell5') && cellPlayed.includes('cell6') && cells[3].textContent === '') {
+                    cells[3].textContent = mark;
+                    cells[3].appendChild(image02.cloneNode(true));
+                    cellPlayed.push(cells[3].id);
+                    break breakme;
+                }
+
+                // row strategy 03
+                if (cellIds.includes('cell9') && cellPlayed.includes('cell7') && cellPlayed.includes('cell8') && cells[8].textContent === '') {
+                    cells[8].textContent = mark;
+                    cells[8].appendChild(image02.cloneNode(true));
+                    cellPlayed.push(cells[8].id);
+                    break breakme;
+                }
+                if (cellIds.includes('cell8') && cellPlayed.includes('cell7') && cellPlayed.includes('cell9') && cells[7].textContent === '') {
+                    cells[7].textContent = mark;
+                    cells[7].appendChild(image02.cloneNode(true));
+                    cellPlayed.push(cells[7].id);
+                    break breakme;
+                }
+                if (cellIds.includes('cell7') && cellPlayed.includes('cell8') && cellPlayed.includes('cell9') && cells[6].textContent === '') {
+                    cells[6].textContent = mark;
+                    cells[6].appendChild(image02.cloneNode(true));
+                    cellPlayed.push(cells[6].id);
+                    break breakme;
+                }
+
+                // column strategy 01
+                if (cellIds.includes('cell7') && cellPlayed.includes('cell1') && cellPlayed.includes('cell4') && cells[6].textContent === '') {
+                    cells[6].textContent = mark;
+                    cells[6].appendChild(image02.cloneNode(true));
+                    cellPlayed.push(cells[6].id);
+                    break breakme;
+                }
+                if (cellIds.includes('cell4') && cellPlayed.includes('cell1') && cellPlayed.includes('cell7') && cells[3].textContent === '') {
+                    cells[3].textContent = mark;
+                    cells[3].appendChild(image02.cloneNode(true));
+                    cellPlayed.push(cells[3].id);
+                    break breakme;
+                }
+                if (cellIds.includes('cell1') && cellPlayed.includes('cell4') && cellPlayed.includes('cell7') && cells[0].textContent === '') {
+                    cells[0].textContent = mark;
+                    cells[0].appendChild(image02.cloneNode(true));
+                    cellPlayed.push(cells[0].id);
+                    break breakme;
+                }
+
+                // column strategy 02
+                if (cellIds.includes('cell8') && cellPlayed.includes('cell2') && cellPlayed.includes('cell5') && cells[7].textContent === '') {
+                    cells[7].textContent = mark;
+                    cells[7].appendChild(image02.cloneNode(true));
+                    cellPlayed.push(cells[7].id);
+                    break breakme;
+                }
+                if (cellIds.includes('cell5') && cellPlayed.includes('cell2') && cellPlayed.includes('cell8') && cells[4].textContent === '') {
+                    cells[4].textContent = mark;
+                    cells[4].appendChild(image02.cloneNode(true));
+                    cellPlayed.push(cells[4].id);
+                    break breakme;
+                }
+                if (cellIds.includes('cell2') && cellPlayed.includes('cell5') && cellPlayed.includes('cell8') && cells[1].textContent === '') {
+                    cells[1].textContent = mark;
+                    cells[1].appendChild(image02.cloneNode(true));
+                    cellPlayed.push(cells[1].id);
+                    break breakme;
+                }
+
+                // column strategy 03
+                if (cellIds.includes('cell9') && cellPlayed.includes('cell3') && cellPlayed.includes('cell6') && cells[8].textContent === '') {
+                    cells[8].textContent = mark;
+                    cells[8].appendChild(image02.cloneNode(true));
+                    cellPlayed.push(cells[8].id);
+                    break breakme;
+                }
+                if (cellIds.includes('cell6') && cellPlayed.includes('cell3') && cellPlayed.includes('cell9') && cells[5].textContent === '') {
+                    cells[5].textContent = mark;
+                    cells[5].appendChild(image02.cloneNode(true));
+                    cellPlayed.push(cells[5].id);
+                    break breakme;
+                }
+                if (cellIds.includes('cell3') && cellPlayed.includes('cell6') && cellPlayed.includes('cell9') && cells[2].textContent === '') {
+                    cells[2].textContent = mark;
+                    cells[2].appendChild(image02.cloneNode(true));
+                    cellPlayed.push(cells[2].id);
+                    break breakme;
+                }
+
+                // diagonal strategy 01
+                if (cellIds.includes('cell9') && cellPlayed.includes('cell1') && cellPlayed.includes('cell5') && cells[8].textContent === '') {
+                    cells[8].textContent = mark;
+                    cells[8].appendChild(image02.cloneNode(true));
+                    cellPlayed.push(cells[8].id);
+                    break breakme;
+                }
+                if (cellIds.includes('cell5') && cellPlayed.includes('cell1') && cellPlayed.includes('cell9') && cells[4].textContent === '') {
+                    cells[4].textContent = mark;
+                    cells[4].appendChild(image02.cloneNode(true));
+                    cellPlayed.push(cells[4].id);
+                    break breakme;
+                }
+                if (cellIds.includes('cell1') && cellPlayed.includes('cell5') && cellPlayed.includes('cell9') && cells[0].textContent === '') {
+                    cells[0].textContent = mark;
+                    cells[0].appendChild(image02.cloneNode(true));
+                    cellPlayed.push(cells[0].id);
+                    break breakme;
+                }
+
+                // diagonal strategy 02
+                if (cellIds.includes('cell7') && cellPlayed.includes('cell3') && cellPlayed.includes('cell5') && cells[6].textContent === '') {
+                    cells[6].textContent = mark;
+                    cells[6].appendChild(image02.cloneNode(true));
+                    cellPlayed.push(cells[6].id);
+                    break breakme;
+                }
+                if (cellIds.includes('cell5') && cellPlayed.includes('cell3') && cellPlayed.includes('cell7') && cells[4].textContent === '') {
+                    cells[4].textContent = mark;
+                    cells[4].appendChild(image02.cloneNode(true));
+                    cellPlayed.push(cells[4].id);
+                    break breakme;
+                }
+                if (cellIds.includes('cell3') && cellPlayed.includes('cell5') && cellPlayed.includes('cell7') && cells[2].textContent === '') {
+                    cells[2].textContent = mark;
+                    cells[2].appendChild(image02.cloneNode(true));
+                    cellPlayed.push(cells[2].id);
+                    break breakme;
+                }
+                // end of strategies for computer to win
+
+
+                // Prevent the player to win easily
                 // row strategy 01
                 if (cellIds.includes('cell3') && cellIdTrack.includes('cell1') && cellIdTrack.includes('cell2') && cells[2].textContent === '') {
                     cells[2].textContent = mark;
                     cells[2].appendChild(image02.cloneNode(true));
+                    cellPlayed.push(cells[2].id);
                     break breakme;
                 }
                 if (cellIds.includes('cell2') && cellIdTrack.includes('cell1') && cellIdTrack.includes('cell3') && cells[1].textContent === '') {
                     cells[1].textContent = mark;
                     cells[1].appendChild(image02.cloneNode(true));
+                    cellPlayed.push(cells[1].id);
                     break breakme;
                 }
                 if (cellIds.includes('cell1') && cellIdTrack.includes('cell2') && cellIdTrack.includes('cell3') && cells[0].textContent === '') {
                     cells[0].textContent = mark;
                     cells[0].appendChild(image02.cloneNode(true));
+                    cellPlayed.push(cells[0].id);
                     break breakme;
                 }
 
@@ -93,16 +261,19 @@
                 if (cellIds.includes('cell6') && cellIdTrack.includes('cell4') && cellIdTrack.includes('cell5') && cells[5].textContent === '') {
                     cells[5].textContent = mark;
                     cells[5].appendChild(image02.cloneNode(true));
+                    cellPlayed.push(cells[5].id);
                     break breakme;
                 }
                 if (cellIds.includes('cell5') && cellIdTrack.includes('cell4') && cellIdTrack.includes('cell6') && cells[4].textContent === '') {
                     cells[4].textContent = mark;
                     cells[4].appendChild(image02.cloneNode(true));
+                    cellPlayed.push(cells[4].id);
                     break breakme;
                 }
                 if (cellIds.includes('cell4') && cellIdTrack.includes('cell5') && cellIdTrack.includes('cell6') && cells[3].textContent === '') {
                     cells[3].textContent = mark;
                     cells[3].appendChild(image02.cloneNode(true));
+                    cellPlayed.push(cells[3].id);
                     break breakme;
                 }
 
@@ -110,16 +281,19 @@
                 if (cellIds.includes('cell9') && cellIdTrack.includes('cell7') && cellIdTrack.includes('cell8') && cells[8].textContent === '') {
                     cells[8].textContent = mark;
                     cells[8].appendChild(image02.cloneNode(true));
+                    cellPlayed.push(cells[8].id);
                     break breakme;
                 }
                 if (cellIds.includes('cell8') && cellIdTrack.includes('cell7') && cellIdTrack.includes('cell9') && cells[7].textContent === '') {
                     cells[7].textContent = mark;
                     cells[7].appendChild(image02.cloneNode(true));
+                    cellPlayed.push(cells[7].id);
                     break breakme;
                 }
                 if (cellIds.includes('cell7') && cellIdTrack.includes('cell8') && cellIdTrack.includes('cell9') && cells[6].textContent === '') {
                     cells[6].textContent = mark;
                     cells[6].appendChild(image02.cloneNode(true));
+                    cellPlayed.push(cells[6].id);
                     break breakme;
                 }
 
@@ -127,16 +301,19 @@
                 if (cellIds.includes('cell7') && cellIdTrack.includes('cell1') && cellIdTrack.includes('cell4') && cells[6].textContent === '') {
                     cells[6].textContent = mark;
                     cells[6].appendChild(image02.cloneNode(true));
+                    cellPlayed.push(cells[6].id);
                     break breakme;
                 }
                 if (cellIds.includes('cell4') && cellIdTrack.includes('cell1') && cellIdTrack.includes('cell7') && cells[3].textContent === '') {
                     cells[3].textContent = mark;
                     cells[3].appendChild(image02.cloneNode(true));
+                    cellPlayed.push(cells[3].id);
                     break breakme;
                 }
                 if (cellIds.includes('cell1') && cellIdTrack.includes('cell4') && cellIdTrack.includes('cell7') && cells[0].textContent === '') {
                     cells[0].textContent = mark;
                     cells[0].appendChild(image02.cloneNode(true));
+                    cellPlayed.push(cells[0].id);
                     break breakme;
                 }
 
@@ -144,16 +321,19 @@
                 if (cellIds.includes('cell8') && cellIdTrack.includes('cell2') && cellIdTrack.includes('cell5') && cells[7].textContent === '') {
                     cells[7].textContent = mark;
                     cells[7].appendChild(image02.cloneNode(true));
+                    cellPlayed.push(cells[7].id);
                     break breakme;
                 }
                 if (cellIds.includes('cell5') && cellIdTrack.includes('cell2') && cellIdTrack.includes('cell8') && cells[4].textContent === '') {
                     cells[4].textContent = mark;
                     cells[4].appendChild(image02.cloneNode(true));
+                    cellPlayed.push(cells[4].id);
                     break breakme;
                 }
                 if (cellIds.includes('cell2') && cellIdTrack.includes('cell5') && cellIdTrack.includes('cell8') && cells[1].textContent === '') {
                     cells[1].textContent = mark;
                     cells[1].appendChild(image02.cloneNode(true));
+                    cellPlayed.push(cells[1].id);
                     break breakme;
                 }
 
@@ -161,16 +341,19 @@
                 if (cellIds.includes('cell9') && cellIdTrack.includes('cell3') && cellIdTrack.includes('cell6') && cells[8].textContent === '') {
                     cells[8].textContent = mark;
                     cells[8].appendChild(image02.cloneNode(true));
+                    cellPlayed.push(cells[8].id);
                     break breakme;
                 }
                 if (cellIds.includes('cell6') && cellIdTrack.includes('cell3') && cellIdTrack.includes('cell9') && cells[5].textContent === '') {
                     cells[5].textContent = mark;
                     cells[5].appendChild(image02.cloneNode(true));
+                    cellPlayed.push(cells[5].id);
                     break breakme;
                 }
                 if (cellIds.includes('cell3') && cellIdTrack.includes('cell6') && cellIdTrack.includes('cell9') && cells[2].textContent === '') {
                     cells[2].textContent = mark;
                     cells[2].appendChild(image02.cloneNode(true));
+                    cellPlayed.push(cells[2].id);
                     break breakme;
                 }
 
@@ -178,16 +361,19 @@
                 if (cellIds.includes('cell9') && cellIdTrack.includes('cell1') && cellIdTrack.includes('cell5') && cells[8].textContent === '') {
                     cells[8].textContent = mark;
                     cells[8].appendChild(image02.cloneNode(true));
+                    cellPlayed.push(cells[8].id);
                     break breakme;
                 }
                 if (cellIds.includes('cell5') && cellIdTrack.includes('cell1') && cellIdTrack.includes('cell9') && cells[4].textContent === '') {
                     cells[4].textContent = mark;
                     cells[4].appendChild(image02.cloneNode(true));
+                    cellPlayed.push(cells[4].id);
                     break breakme;
                 }
                 if (cellIds.includes('cell1') && cellIdTrack.includes('cell5') && cellIdTrack.includes('cell9') && cells[0].textContent === '') {
                     cells[0].textContent = mark;
                     cells[0].appendChild(image02.cloneNode(true));
+                    cellPlayed.push(cells[0].id);
                     break breakme;
                 }
 
@@ -195,64 +381,85 @@
                 if (cellIds.includes('cell7') && cellIdTrack.includes('cell3') && cellIdTrack.includes('cell5') && cells[6].textContent === '') {
                     cells[6].textContent = mark;
                     cells[6].appendChild(image02.cloneNode(true));
+                    cellPlayed.push(cells[6].id);
                     break breakme;
                 }
                 if (cellIds.includes('cell5') && cellIdTrack.includes('cell3') && cellIdTrack.includes('cell7') && cells[4].textContent === '') {
                     cells[4].textContent = mark;
                     cells[4].appendChild(image02.cloneNode(true));
+                    cellPlayed.push(cells[4].id);
                     break breakme;
                 }
                 if (cellIds.includes('cell3') && cellIdTrack.includes('cell5') && cellIdTrack.includes('cell7') && cells[2].textContent === '') {
                     cells[2].textContent = mark;
                     cells[2].appendChild(image02.cloneNode(true));
+                    cellPlayed.push(cells[2].id);
                     break breakme;
                 }
                 // end of strategies
 
-                // Make the computer win
+                // computer moves to win
                 if (cellIds.includes('cell5') && cells[4].textContent === '') {
                     cells[4].textContent = mark;
                     cells[4].appendChild(image02.cloneNode(true));
+                    cellPlayed.push(cells[4].id);
+                    console.log(cellPlayed);
                     break breakme;
                 }
                 if (cellIds.includes('cell1') && cells[0].textContent === '') {
                     cells[0].textContent = mark;
                     cells[0].appendChild(image02.cloneNode(true));
+                    cellPlayed.push(cells[0].id);
+                    console.log(cellPlayed);
                     break breakme;
                 }
                 if (cellIds.includes('cell9') && cells[8].textContent === '') {
                     cells[8].textContent = mark;
                     cells[8].appendChild(image02.cloneNode(true));
+                    cellPlayed.push(cells[8].id);
+                    console.log(cellPlayed);
                     break breakme;
                 }
                 if (cellIds.includes('cell3') && cells[2].textContent === '') {
                     cells[2].textContent = mark;
                     cells[2].appendChild(image02.cloneNode(true));
+                    cellPlayed.push(cells[2].id);
+                    console.log(cellPlayed);
                     break breakme;
                 }
                 if (cellIds.includes('cell7') && cells[6].textContent === '') {
                     cells[6].textContent = mark;
                     cells[6].appendChild(image02.cloneNode(true));
+                    cellPlayed.push(cells[6].id);
+                    console.log(cellPlayed);
                     break breakme;
                 }
                 if (cellIds.includes('cell6') && cells[5].textContent === '') {
                     cells[5].textContent = mark;
                     cells[5].appendChild(image02.cloneNode(true));
+                    cellPlayed.push(cells[5].id);
+                    console.log(cellPlayed);
                     break breakme;
                 }
                 if (cellIds.includes('cell8') && cells[7].textContent === '') {
                     cells[7].textContent = mark;
                     cells[7].appendChild(image02.cloneNode(true));
+                    cellPlayed.push(cells[7].id);
+                    console.log(cellPlayed);
                     break breakme;
                 }
                 if (cellIds.includes('cell2') && cells[1].textContent === '') {
                     cells[1].textContent = mark;
                     cells[1].appendChild(image02.cloneNode(true));
+                    cellPlayed.push(cells[1].id);
+                    console.log(cellPlayed);
                     break breakme;
                 }
                 if (cellIds.includes('cell4') && cells[3].textContent === '') {
                     cells[3].textContent = mark;
                     cells[3].appendChild(image02.cloneNode(true));
+                    cellPlayed.push(cells[3].id);
+                    console.log(cellPlayed);
                     break breakme;
                 }
             }
@@ -463,7 +670,6 @@
     }
 
     function buildGrid() {
-        let cell
         for (let i = 1; i <= 9; i += 1) {
             let cell = document.createElement('li');
             cell.id = 'cell' + i;
@@ -517,8 +723,9 @@
 
     function restartGame() {
         mark = '';
-        cellIds = [''];
-        cellIdTrack = [''];
+        cellIds = [];
+        cellIdTrack = [];
+        cellPlayed = [];
         victory = false;
 
         cells.forEach(cell => {
