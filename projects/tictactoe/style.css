@@ -1,0 +1,165 @@
+* {
+    margin: 0;
+    padding: 0;
+    color: #fff;
+    font-size: 18px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+html {
+    background-image: url("./resource/by_ali_abdul_rahman_on_unsplash.jpg");
+    height: 100vh;
+    background-size: cover;
+    background-repeat: round;
+}
+
+.header {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+}
+
+.homeIcon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+}
+
+.homeIcon svg {
+    width: 25px;
+    fill: #fff;
+    padding: 10px;
+}
+
+.title {
+    font-size: 25px;
+    padding: 20px 0;
+}
+
+.playerMsg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 200;
+}
+
+.fieldset {
+    border: none;
+    text-align: center;
+}
+
+input[type='radio'] {
+    width: 0;
+}
+
+.fieldset label {
+    cursor: pointer;
+}
+
+img {
+    width: 70px;
+}
+
+#grid-section {
+    margin: 1em 0;
+}
+
+#grid {
+    width: 300px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+li {
+    border: 1px solid #fff;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    color: transparent;
+    font-size: 18px;
+    text-align: center;
+}
+
+li img {
+    margin: 0 auto;
+}
+
+#cell1, #cell2, #cell3 {
+    border-top: none;
+}
+
+#cell3, #cell6, #cell9 {
+    border-right: none;
+}
+
+#cell7, #cell8, #cell9 {
+    border-bottom: none;
+}
+
+#cell1, #cell4, #cell7 {
+    border-left: none;
+}
+
+.resetBtn {
+    text-align: center;
+    display: none;
+}
+
+.resetBtn button {
+    color: rgb(33, 160, 160);
+    font-weight: 700;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+}
+
+@media (min-width: 500px) {
+    .homeIcon svg {
+        width: 30px;
+    }
+
+    .title {
+        font-size: 30px;
+    }
+
+    .msgToPlayer {
+        font-size: 20px;
+    }
+}
+
+@media (min-width: 768px) {
+    .homeIcon svg {
+        width: 50px;
+    }
+
+    .title {
+        font-size: 50px;
+    }
+
+    .msgToPlayer {
+        font-size: 30px;
+    }
+
+    img {
+        width: 90px;
+    }
+
+    #grid {
+        width: 450px;
+    }
+
+    li {
+        width: 150px;
+        height: 150px;
+        font-size: 26px;
+    }
+
+    li img {
+        width: 100px;
+    }
+}

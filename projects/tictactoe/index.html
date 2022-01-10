@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Tic Tac Toe Game Project</title>
+        <link rel="stylesheet" href="./style.css">
+    </head>
+    <body>
+        <div>
+            <div class="header">
+                <div class="homeIcon">
+                    <a href="../indexHome.html">
+                        <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                             viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+                <g>
+                    <g>
+                        <path d="M256,0L3.205,252.795v22.92h51.591V512h154.772V346.91h92.863V512h154.772V275.714h51.591v-22.92L256,0z M426.249,244.76
+                            v236.286h-92.863v-165.09H178.614v165.09H85.751V244.76H55.016L256,43.777L456.984,244.76H426.249z"/>
+                    </g>
+                </g>
+            </svg>
+                    </a>
+                </div>
+                <h1 class="title">Tic Tac Toe Game</h1>
+            </div>
+            <div class="playerMsg">
+                <div class="seashell"></div>
+                <h2 class="message msgToPlayer">Please choose your seashell</h2>
+            </div>
+            <form action="#">
+                <fieldset class="fieldset" id="hiddenField" >
+                    <input type="radio" name="player-choice" id="player-choice-1" value="X" />
+                    <label for="player-choice-1">
+                        <img src="./resource/seashell01.png" alt="seashell" />
+                    </label>
+                    <input type="radio" name="player-choice" id="player-choice-2" value="O" />
+                    <label for="player-choice-2">
+                        <img src="./resource/seashell02.png" alt="seashell">
+                    </label>
+                </fieldset>
+            </form>
+        </div>
+        <div class="row" id="grid-section">
+            <ul id="grid"></ul>
+        </div>
+        <div class="resetBtn hiddenBtn">
+            <button class="reset">Restart</button>
+        </div>
+        <script src="./script.js"></script>
+    </body>
+</html>
